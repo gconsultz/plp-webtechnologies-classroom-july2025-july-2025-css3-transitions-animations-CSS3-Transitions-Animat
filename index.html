@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment: Bringing Web Pages to Life with CSS & JavaScript</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to My Interactive Page</h1>
+        </header>
+        <br>
+        <main>
+
+            <!-- Part 1: CSS Transitions & Animations -->
+            <h2>Part 1: CSS Transitions & Animations</h2>
+            
+            <br>
+            <!-- Button hover effect -->
+            <section>
+                <p><h3>Button hover effect</h3></p>
+                <button class="fancy-btn">Hover Over Me</button>
+            </section>
+            
+            <br>
+            <!-- Card flip effect -->
+            <section>
+                <div class="card">
+                    <p><h3>Card flip effect</h3></p>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h5>Front</h5>
+                        </div>
+                        <div class="card-back">
+                            <h5>Back</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <br><br>
+            <!-- Pulsing loader animation -->
+            <section>
+                <p><h3>Pulsing loader animation</h3></p>
+                <div class="pulse-loader"></div>
+            </section>
+            
+            <br><br>
+            <!-- Part 2: JavaScript Functions -->
+            
+            <h2>Part 2: JavaScript Functions — Scope, Parameters & Return Values</h2>
+
+            <!-- Function Demo 1: Addition -->
+            <section>
+                <p><h3>Function Demo 1: Add Numbers</h3></p>
+                <input type="number" id="num1" placeholder="Enter first number">
+                <input type="number" id="num2" placeholder="Enter second number">
+                <button class="function-btn" onclick="handleAddition()">Calculate Sum</button>
+                <p id="result"></p>
+            </section>
+            
+            <br>
+            <!-- Function Demo 2: Scope -->
+            <section>
+                <p><h3>Function Demo 2: Global vs Local Scope</h3></p>
+                <button class="function-btn" onclick="showScopeExample()">Show Scope Example</button>
+                <p id="scope-output"></p>
+            </section>
+
+            <br>
+            <!-- Function Demo 3: Rectangle Area -->
+            <section>
+                <p><h3>Function Demo 3: Calculate Rectangle Area</h3></p>
+                <input type="number" id="length" placeholder="Enter length">
+                <input type="number" id="width" placeholder="Enter width">
+                <button class="function-btn" onclick="handleArea()">Calculate Area</button>
+                <p id="area-result"></p>
+            </section>
+
+            <br>
+            <!-- Function Demo 4: Random Color -->
+            <section>
+                <p><h3>Function Demo 4: Random Color Generator</h3></p>
+                <button class="function-btn" onclick="applyRandomColor()">Change Background Color</button>
+                <p id="color-result"></p>
+            </section>
+            
+            <br><br>
+            <!-- Part 3: Combining CSS & JavaScript -->
+            
+            <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+
+            <br>
+            <!-- Demo 1: Animate Box -->
+            <section>
+                <p><h3>Animation Demo 1: Animate a Box</h3></p>
+                <div id="animate-box"></div>
+                <button class="function-btn" onclick="toggleBoxAnimation()">Animate Box</button>
+            </section>
+            
+            <br>
+            <!-- Demo 2: Trigger Card Flip -->
+            <section>
+                <p><h3>Animation Demo 2: Trigger Card Flip</h3></p>
+                <div class="card js-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h5>Front</h5>
+                        </div>
+                        <div class="card-back">
+                            <h5>Back</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="function-btn" onclick="flipCard()">Flip Card with JS</button>
+            </section>
+
+            <br>
+            <!-- Demo 3: Start/Stop Loader -->
+            <section>
+                <p><h3>Animation Demo 3: Start/Stop Loader</h3></p>
+                <div id="js-loader" class="pulse-loader"></div>
+                <button class="function-btn" onclick="toggleLoader()">Start/Stop Loader</button>
+            </section>
+
+            <br>
+            <!-- Demo 4: Popup Modal -->
+            <section>
+                <p><h3>Animation Demo 4: Popup Modal</h3></p>
+                <button class="function-btn" onclick="openModal()">Open Modal</button>
+            
+                <!-- Modal Structure -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal()">&times;</span>
+                        <h3>Hello 👋</h3>
+                        <p>This is a JavaScript-triggered modal with CSS animation!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,234 @@
+/*
+    🌐 Global Page Styling
+*/
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #f4f4f9, #e0c3fc, #8ec5fc);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+h2 {
+  margin-top: 3rem;
+  color: #2c3e50;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+p {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/*
+    🎨 Part 1: CSS Transitions & Animations
+*/
+
+/* Part 1A: Button Hover Effect */
+.fancy-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* Part 1B: Card Flip Effect */
+.card {
+  perspective: 1000px; /* enables 3D effect */
+  width: 200px;
+  height: 250px;
+  margin: 2rem auto;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden; /* hides reverse side */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.card-front {
+  background: #ff6f61;
+}
+
+.card-back {
+  background: #00b894;
+  transform: rotateY(180deg);
+}
+
+/* Part 1C: Pulse Loader Effect */
+.pulse-loader {
+  width: 50px;
+  height: 50px;
+  background: #b60404;
+  border-radius: 50%;
+  margin: 1rem auto;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 
+  📚 Part 2: JavaScript Functions Styling
+*/
+
+/* Shared button styling */
+.function-btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.function-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(45deg, #dd2476, #ff512f);
+}
+
+/* Input fields */
+input[type="number"] {
+  padding: 0.5rem;
+  margin: 0.3rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  width: 150px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+}
+
+/* Results text */
+#result, #scope-output, #area-result, #color-result {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 0.8rem;
+}
+
+/*
+   🎬 Part 3: JS + CSS Animations
+*/
+
+/* Demo 1: Animate Box */
+#animate-box {
+  width: 100px;
+  height: 100px;
+  background: #3498db;
+  margin: 1rem auto;
+  border-radius: 8px;
+  transition: transform 1s ease, background 1s ease;
+}
+
+#animate-box.active {
+  transform: rotate(360deg) scale(1.2);
+  background: #e74c3c;
+}
+
+/* Demo 2: JS Controlled Card Flip */
+.js-card .card-inner {
+  transition: transform 0.8s ease;
+}
+
+.js-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Demo 3: Start/Stop Loader */
+#js-loader.stopped {
+  animation: none;
+  background: #ccc;
+}
+
+/* Demo 4: Modal Popup */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  animation: slideIn 0.5s ease;
+  max-width: 400px;
+  text-align: center;
+  position: relative; /* for close button positioning */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(100px); opacity: 0; }
+}
+
+.modal-content.closing {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+}
